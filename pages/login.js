@@ -10,6 +10,10 @@ function Login() {
         auth.signInWithPopup(provider).catch(alert)
     }
 
+    const demoSignIn = () => {
+        auth.signInAnonymously().catch(alert)
+    }
+
     return (
         <Container>
             <Head>
@@ -21,6 +25,7 @@ function Login() {
                     src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c543.png"
                 />
                 <Button onClick={signIn} variant="outlined">Sign in with Google</Button>
+                <DemoButton onClick={demoSignIn} variant="outlined">Demo Sign in</DemoButton>
             </LoginContainer>
         </Container>
 
@@ -51,4 +56,8 @@ const Logo = styled.img`
     height: 200px;
     width: 200px;
     margin-bottom: 50px;
+`;
+
+const DemoButton = styled(Button)`
+    margin-top:20px !important;
 `;
